@@ -14,22 +14,22 @@ const AddActor = props => {
 
     const onActorAdd = () => {
         if (!firstName){
-            alert('Please enter actors first name.');
+            alert('Please enter a first name.');
             return;
         }
         if (!lastName){
-            alert('Please enter actors last name.');
+            alert('Please enter a last name.');
             return;
         }
-
+        
         try {
             database.addActor(firstName, lastName);
         } catch (error) {
-            console.log('Error adding Actor ' + error);
+            console.log('Error adding actor ' + error);
         }
 
         alert(firstName + " " + lastName + ' Added!');
-        navigation.navigate('Actors/Films');
+        navigation.navigate('Enter FilmCollector!');
     }
 
   return (

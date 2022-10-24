@@ -1,6 +1,5 @@
-/* eslint-disable prettier/prettier */
 import React from 'react';
-import { View, TouchableOpacity, Text } from 'react-native';
+import { View, TouchableOpacity, Text  } from 'react-native';
 import styles from './styles';
 
 const FilmsScreen = props => {
@@ -10,7 +9,7 @@ const FilmsScreen = props => {
         <View style={styles.bottom}>
             <TouchableOpacity 
                 style={styles.button}
-                onPress={() => console.log('Add Film!')}
+                onPress={() => console.log('Add Film')}
                 >
                 <Text style={styles.buttonText}>Add Film</Text>
             </TouchableOpacity>

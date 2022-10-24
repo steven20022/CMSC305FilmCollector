@@ -1,4 +1,3 @@
-/* eslint-disable prettier/prettier */
 import React from 'react';
 import {createStackNavigator} from '@react-navigation/stack';
 import {NavigationContainer} from '@react-navigation/native';
@@ -17,7 +16,7 @@ const Router = props => {
           component={HomeScreen}
           options={{headerShown: false}}
         />
-        <Stack.Screen name={'Actors/Films'} component={TabNavigator}/>
+        <Stack.Screen name={'Enter FilmCollector!'} component={TabNavigator}/>
         <Stack.Screen name={'Add Actor'} component={AddActor}/>
       </Stack.Navigator>
     </NavigationContainer>
