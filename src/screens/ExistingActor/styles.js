@@ -5,7 +5,7 @@ const styles = StyleSheet.create({
     flex: 1,
     alignItems: 'flex-start',
   },
-  deleteButton: {
+  viewButton: {
     backgroundColor: 'black',
     position: 'absolute',
     width: 60,
@@ -15,7 +15,7 @@ const styles = StyleSheet.create({
     alignItems: 'center',
     right: 20,
   },
-  updateButton: {
+  addButton: {
     backgroundColor: 'black',
     position: 'absolute',
     width: 60,
@@ -24,6 +24,26 @@ const styles = StyleSheet.create({
     justifyContent: 'center',
     alignItems: 'center',
     right: 90,
+  },
+  deleteButton: {
+    backgroundColor: 'black',
+    position: 'absolute',
+    width: 60,
+    height: 60,
+    borderRadius: 60,
+    justifyContent: 'center',
+    alignItems: 'center',
+    right: 160,
+  },
+  updateButton: {
+    backgroundColor: 'black',
+    position: 'absolute',
+    width: 60,
+    height: 60,
+    borderRadius: 60,
+    justifyContent: 'center',
+    alignItems: 'center',
+    right: 230,
   },
   buttonText: {
     color: 'white',

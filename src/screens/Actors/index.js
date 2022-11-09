@@ -32,7 +32,7 @@ const ActorsScreen = props => {
           (_, res) => {
             // get number of rows of data selected
             let len = res.rows.length;
-            console.log('Number of actors ' + len);
+            console.log('Length of lists ' + len);
             // if more than one row was returned
             if (len > 0){
               // loop through the rows
