@@ -5,6 +5,7 @@ import { openDatabase } from "react-native-sqlite-storage";
 const filmCollectorDB = openDatabase({name: 'FilmCollector.db'});
 const actorsTableName = 'actors';
 const filmsTableName = 'films';
+const actorfilmsTableName = 'actor_films';
 
 module.exports = {
     // declare function that will create the actors table
@@ -92,6 +93,50 @@ module.exports = {
                 },
                 error => {
                     console.log('Error adding title ' + error.message);
+                },
+            );
+        });
+    },
+    
+    // declare function that will create the films table
+    createActorFilmsTable: async function () {
+        // declare a transaction that will execute a SQL statement
+        (await filmCollectorDB).transaction(txn => {
+            // execute the SQL
+            txn.executeSql(
+                `CREATE TABLE IF NOT EXISTS ${actorfilmsTableName}(
+                    id INTEGER PRIMARY KEY AUTOINCREMENT,
+                    actor INTEGER,
+                    film INTEGER
+                );`,
+                // arguments needed when using an SQL prepared statement
+                [],
+                // callback function to handle results of SQL query
+                () => {
+                    console.log('Actor films table created successfully');
+                },
+                error => {
+                    console.log('Error creating actor films table ' + error.message);
+                },
+            );
+        });
+    },
+
+    // declare function that will insert a row into the films table
+    addActorFilm: async function (actor, film) {
+        // declare a transaction that will execute an SQL statement
+        (await filmCollectorDB).transaction(txn => {
+            // execute the SQL
+            txn.executeSql(
+                `INSERT INTO ${actorfilmsTableName} (actor, film) VALUES (${actor}, ${film})`,
+                // arguments passed when using SQL prepared statements
+                [],
+                // callback function to handle results of SQL query
+                () => {
+                    console.log("actor film added successfully");
+                },
+                error => {
+                    console.log('Error adding actor film ' + error.message);
                 },
             );
         });

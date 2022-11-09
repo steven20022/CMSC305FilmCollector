@@ -1,12 +1,21 @@
+import { useNavigation } from '@react-navigation/native';
 import React from 'react';
 import { Text, TouchableOpacity, View } from 'react-native';
 import styles from './styles';
+
+const database = require('../../components/Handlers/database.js');
 
 const Film = props => {
 
     const post = props.post;
 
-    const onPress = () => {       
+    const navigation = useNavigation();
+
+    const onPress = () => {     
+        if(post.actor_id){
+            database.addActorFilm(post.actor_id, post.id)
+            navigation.navigate('Enter FilmCollector!')
+        }
         console.log(post.title);
     }
 

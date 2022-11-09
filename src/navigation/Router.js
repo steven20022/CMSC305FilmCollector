@@ -6,6 +6,8 @@ import TabNavigator from './TabNavigator';
 import AddActor from '../screens/AddActor';
 import ExistingActor from '../screens/ExistingActor';
 import AddFilm from '../screens/AddFilm';
+import AddActorFilm from '../screens/AddActorFilm';
+import ViewActorFilms from '../screens/ViewActorFilms';
 
 const Stack = createStackNavigator();
 
@@ -22,6 +24,8 @@ const Router = props => {
         <Stack.Screen name={'Add Actor'} component={AddActor}/>
         <Stack.Screen name={'Existing Actor'} component={ExistingActor}/>
         <Stack.Screen name={'Add Film'} component={AddFilm}/>
+        <Stack.Screen name={'Add Actor Film'} component={AddActorFilm}/>
+        <Stack.Screen name={'View Actor Films'} component={ViewActorFilms}/>
       </Stack.Navigator>
     </NavigationContainer>
   );

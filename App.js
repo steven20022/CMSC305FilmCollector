@@ -22,7 +22,12 @@ const App: () => Node = () => {
   try {
     db.createFilmsTable();
   } catch (error) {
-    console.log('Failed to create actors table ' + error);
+    console.log('Failed to create films table ' + error);
+  }
+  try {
+    db.createActorFilmsTable();
+  } catch (error) {
+    console.log('Failed to create actor films table ' + error);
   }
   return <Router />;
 };
